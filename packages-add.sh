@@ -1,4 +1,4 @@
-meteor add accounts-base
+ meteor add accounts-base
  meteor add accounts-password
  meteor add accounts-ui
  meteor add alanning:roles
@@ -29,7 +29,8 @@ meteor add accounts-base
  meteor add reactive-var
  meteor add sacha:spin
  meteor add styling
+ meteor add sunburst
  meteor add userman
  meteor add vsivsi:job-collection
  meteor add yogiben:autoform-map
-
+ meteor remove autopublish
