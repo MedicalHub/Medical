@@ -1,0 +1,26 @@
+<template name="PSlotSelection">
+	{{#each dayCalendar}} {{>PSlotStatus}} {{/each}}
+</template>
+<template name="PSlotStatus">
+	<div class="feed-element">
+		<ul>
+			{{value.title}}
+			{{#each bookings}}
+			<li>
+				<div class="intimeline-icon active">
+					<i class="fa fa-file-text"></i>
+				</div>
+				<div class="intimeline-time">{{start}}
+					<br>
+					<small>3 hour ago</small>
+				</div>
+				<div class="intimeline-message">
+					<p class="push-bit"><strong>Send documents to Mike</strong>
+					</p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>

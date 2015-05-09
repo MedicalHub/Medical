@@ -1,0 +1,403 @@
+<template name="LayoutAdminLeftPane">
+	<nav class="navbar-default navbar-static-side navbar-fixed-top" role="navigation">
+		<div class="sidebar-collapse">
+			<ul class="nav" id="side-menu">
+				{{#if isInRole 'notverified'}}
+				<li class="nav-header">
+					<a href="PreVerifiedSetting#"><i class="fa fa-cog"></i> <span class="nav-label">Settings</span><span class="fa arrow"></span> </a>
+					<ul class="nav nav-second-level">
+						<li><a href="PreVerifiedSetting">Personal Settings</a>
+						</li>
+					</ul>
+				</li>
+				{{else}}
+				<li class="nav-header">
+					<div class="dropdown profile-element">
+						<span>
+              <img alt="image" class="img-circle" src="{{img.image}}" />
+              </span>
+						<a data-toggle="dropdown" class="dropdown-toggle" href="/#">
+							<span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{name.name}}</strong>
+              </span> <span class="text-muted text-xs block">{{degree.doctor_fields.doctor_qualification.[0].course_name}},{{degree.doctor_fields.doctor_qualification.[1].course_name}} <b class="caret"></b></span> </span>
+						</a>
+						<ul class="dropdown-menu animated fadeInRight m-t-xs">
+							<li><a href="Profile">Profile</a>
+							</li>
+							<li><a href="Contacts">Contacts</a>
+							</li>
+							<li><a href="Mailbox">Mailbox</a>
+							</li>
+							<li class="divider"></li>
+							<li><a href="Logins">Logout</a>
+							</li>
+						</ul>
+					</div>
+					<div class="logo-element">
+						M+
+					</div>
+				</li>
+				<li class="active">
+					<a href="Index#"><i class="fa fa-th-large"></i> <span class="nav-label">Home</span> </a>
+				</li>
+				<li>
+					<a href="Index#"><i class="fa fa-cog"></i> <span class="nav-label">Settings</span><span class="fa arrow"></span> </a>
+					<ul class="nav nav-second-level">
+						<li><a href="NewSettings">Personal Settings</a>
+						</li>
+						<!--<li><a href="WorkPlaceSettings">Workplace Settings</a></li> -->
+					</ul>
+				</li>
+				<li>
+					<a href="Index#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Appointment</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="AppointmentWizard">Appointment Wizard</a>
+						</li>
+						<!--{{#each c_layout_facility_list}}
+					{{>layout_facility_list}}
+				{{/each}}
+				-->
+					</ul>
+
+				</li>
+				<li>
+					<a href="Index#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Statistics</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="GraphFlot">Flot Charts</a>
+						</li>
+						<li><a href="GraphMorris">Morris.js Charts</a>
+						</li>
+						<li><a href="GraphRickshaw">Rickshaw Charts</a>
+						</li>
+						<li><a href="GraphPeity">Peity Charts</a>
+						</li>
+						<li><a href="GraphSparkline">Sparkline Charts</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index#"><i class="fa fa-edit"></i> <span class="nav-label">History</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="FormBasic">Basic form</a>
+						</li>
+						<li><a href="FormAdvanced">Advanced Plugins</a>
+						</li>
+						<li><a href="FormWizard">Wizard</a>
+						</li>
+						<li><a href="FormFileUpload">File Upload</a>
+						</li>
+						<li><a href="FormEditors">Text Editor</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index#"><i class="fa fa-flask"></i> <span class="nav-label">Events</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="Typography">Typography</a>
+						</li>
+						<li><a href="Icons">Icons</a>
+						</li>
+						<li><a href="DraggablePanels">Draggable Panels</a>
+						</li>
+						<li><a href="Buttons">Buttons</a>
+						</li>
+						<li><a href="TabsPanels">Tabs & Panels</a>
+						</li>
+						<li><a href="Notifications">Notifications & Tooltips</a>
+						</li>
+						<li><a href="BadgesLabels">Badges, Labels, Progress</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index"><i class="fa fa-laptop"></i> <span class="nav-label">Guess Tools</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="GridOptions">Grid options</a>
+						</li>
+						<li><a href="BoxedLayout">Boxed layout</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="mailbox"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="Mailbox">Inbox</a>
+						</li>
+						<li><a href="MailDetail">Email view</a>
+						</li>
+						<li><a href="MailCompose">Compose email</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="Contacts">Contacts</a>
+						</li>
+						<li><a href="Profile">Profile</a>
+						</li>
+						<li><a href="FileManager">File manager</a>
+						</li>
+						<li><a href="Calendar">Calendar</a>
+						</li>
+						<li><a href="Timeline">Timeline</a>
+						</li>
+						<li><a href="PinBoard">Pin board</a>
+						</li>
+						<li><a href="Invoice">Invoice</a>
+						</li>
+						<li><a href="Login">Login</a>
+						</li>
+						<li><a href="Register">Register</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="SearchResults">Search results</a>
+						</li>
+						<li><a href="Lockscreen">Lockscreen</a>
+						</li>
+						<li><a href="FourZeroFour">404 Page</a>
+						</li>
+						<li><a href="FiveZeroZero">500 Page</a>
+						</li>
+						<li><a href="EmptyPage">Empty page</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="TableBasic">Static Tables</a>
+						</li>
+						<li><a href="TableDataTables">Data Tables</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="BasicGallery">Basic Gallery</a>
+						</li>
+						<li><a href="Carousel">Bootstrap Carusela</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="Index"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="/#">Third Level <span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level">
+								<li>
+									<a href="/#">Third Level Item</a>
+								</li>
+								<li>
+									<a href="/#">Third Level Item</a>
+								</li>
+								<li>
+									<a href="/#">Third Level Item</a>
+								</li>
+							</ul>
+						</li>
+						<li><a href="/#">Second Level Item</a>
+						</li>
+						<li>
+							<a href="/#">Second Level Item</a>
+						</li>
+						<li>
+							<a href="/#">Second Level Item</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="CssAnimations"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
+				</li>
+				{{/if}}
+			</ul>
+		</div>
+	</nav>
+
+
+
+</template>
+<template name="LayoutAdminCentrePane">
+	<div id="page-wrapper" class="gray-bg">
+		<div class="row border-bottom">
+			<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+				<div class="navbar-header">
+					<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+
+				</div>
+				<ul class="nav navbar-top-links navbar-right">
+
+					<li class="dropdown">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="/#">
+							<i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+						</a>
+						<ul class="dropdown-menu dropdown-messages">
+							<li>
+								<div class="dropdown-messages-box">
+									<a href="profile.html" class="pull-left">
+										<img alt="image" class="img-circle" src="img/a7.jpg">
+									</a>
+									<div class="media-body">
+										<small class="pull-right">46h ago</small>
+										<strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>.
+										<br>
+										<small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div class="dropdown-messages-box">
+									<a href="profile.html" class="pull-left">
+										<img alt="image" class="img-circle" src="img/a4.jpg">
+									</a>
+									<div class="media-body ">
+										<small class="pull-right text-navy">5h ago</small>
+										<strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>.
+										<br>
+										<small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div class="dropdown-messages-box">
+									<a href="profile.html" class="pull-left">
+										<img alt="image" class="img-circle" src="img/profile.jpg">
+									</a>
+									<div class="media-body ">
+										<small class="pull-right">23h ago</small>
+										<strong>Monica Smith</strong> love <strong>Kim Smith</strong>.
+										<br>
+										<small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div class="text-center link-block">
+									<a href="mailbox.html">
+										<i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="/#">
+							<i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+						</a>
+						<ul class="dropdown-menu dropdown-alerts">
+							<li>
+								<a href="mailbox.html">
+									<div>
+										<i class="fa fa-envelope fa-fw"></i> You have 16 messages
+										<span class="pull-right text-muted small">4 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="profile.html">
+									<div>
+										<i class="fa fa-twitter fa-fw"></i> 3 New Followers
+										<span class="pull-right text-muted small">12 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="grid_options.html">
+									<div>
+										<i class="fa fa-upload fa-fw"></i> Server Rebooted
+										<span class="pull-right text-muted small">4 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div class="text-center link-block">
+									<a href="notifications.html">
+										<strong>See All Alerts</strong>
+										<i class="fa fa-angle-right"></i>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="login.html">
+							<i class="fa fa-sign-out"></i>
+							<!--{{> loginButtons}}-->
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="row wrapper border-bottom white-bg page-heading">
+			<br>
+			<div class="col-lg-12 col-sm-0">
+				<div class="row">
+					<div class="col-lg-3">
+						{{#if isInRole 'noinfo'}}
+						<h2>{{name.name}}</h2>
+						<button class="btn btn-white request" type="button"><i class="fa fa-question"></i>&nbsp;HELP</button>
+						{{else}}
+						<!--<ul class="breadcrumb">
+					  <li>
+						<a href="index.html">Home</a>
+					  </li>
+					  <li>
+						App Views
+					  </li>
+					</ul>-->
+						{{/if}}
+					</div>
+					<div class="col-lg-8 col-lg-offset-1">
+						<div class="pull-right">
+							{{#if isInRole 'noinfo'}}
+							<button class="btn btn-primary request" type="button"><i class="fa fa-check"></i>&nbsp;REQUEST ACTIVATION</button>
+							{{else}} {{#if isInRole 'notverified'}}
+							<button class="btn btn-white " type="button"><i class="fa fa-check"></i>&nbsp;Pending Approval</button>
+							{{else}}
+							<a class="btn btn-success btn-bitbucket" href="Flipster"><i class="fa fa-plus-square-o"></i></a>
+							<a class="btn btn-white btn-bitbucket" href="Index"><i class="fa fa-check"></i>&nbsp;Home</a>
+							<a class="btn btn-white btn-bitbucket" href="Mailbox"><i class="fa fa-paste"></i> Mail</a>
+							<a class="btn btn-white btn-facebook btn-outline" href="AppointmentWizard"> Appointment Wizard</a> {{/if}} {{/if}}
+							<!--<a class="btn btn-white btn-bitbucket" href="Contacts">
+				  <i class="fa fa-group"></i>
+				  </a>
+				  <a class="btn btn-white btn-bitbucket">
+				  <i class="fa fa-wrench"></i>
+				  </a>
+				  <a class="btn btn-white btn-bitbucket">
+				  <i class="fa fa-road"></i>
+				  </a>
+				  <a class="btn btn-danger btn-bitbucket btn-outline">
+				  <i class="fa fa-ambulance"></i>
+				  </a>
+				  <a class="btn btn-warning btn-bitbucket">
+				  <i class="fa fa-star"></i> 
+				  </a>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- {{> yield}}-->
+		{{> Template.dynamic template=template }}
+	</div>
+
+
+</template>
+<template name="LayoutAdmin">
+	{{#if Template.subscriptionsReady}} {{else}} Loading.. NewSettings {{/if}}
+	<div id="wrapper">
+		{{>LayoutAdminLeftPane}} {{>LayoutAdminCentrePane}}
+	</div>
+</template>

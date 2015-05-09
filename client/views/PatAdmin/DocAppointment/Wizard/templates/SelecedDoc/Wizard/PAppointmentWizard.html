@@ -1,0 +1,15 @@
+<template name="PAppointmentWizard">
+	{{#if Template.subscriptionsReady}}
+			<div class="col-lg-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						{{>PAppointmentHead data}}
+						<br>
+						<div class="white-bg">
+							{{> Template.dynamic template=template data=data}}
+						</div>
+					</div>
+				</div>
+			</div>
+	{{else}} Loading... Dsearch {{/if}}
+</template>

@@ -1,0 +1,22 @@
+<template name="Avatar">
+{{#if Template.subscriptionsReady}}
+<ul class="list-inline">
+	{{#each myArrayWithIndex}}
+		{{> controller}}
+	{{/each}}
+</ul>
+
+<canvas id="gltest" style="display:none"></canvas>
+<div id="loading-feedback" class="loading-feedback ">Loading...</div>
+<div class ="cow"></div>
+
+{{else}}
+    Loading.. Avatar
+{{/if}}
+<button>SUBMIT</button>
+</template>
+
+<template name="controller">
+	<li><div class="slider{{index}}">HI</div></li>
+ 
+</template>
