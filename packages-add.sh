@@ -34,3 +34,4 @@
  meteor add vsivsi:job-collection
  meteor add yogiben:autoform-map
  meteor remove autopublish
+	#test merge
