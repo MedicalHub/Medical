@@ -4,13 +4,12 @@ Package.describe({
 });
 
 
-Package.on_use(function (api, where) {
-	//api.export(['ReactiveSunburstTemplate']);
-	api.use(['underscore','d3','jquery','templating']);
-	api.add_files([
-		,'client/js/ReactiveSunburst.js'
-		,'client/js/ReactiveSunburstTemplate.html'
-		,'client/js/ReactiveSunburstTemplate.js'
+Package.onUse(function (api, where) {
+	api.use(['underscore', 'd3', 'jquery', 'templating']);
+	api.addFiles([
+		 'client/js/ReactiveSunburst.js'
+		, 'client/js/ReactiveSunburstTemplate.html'
+		, 'client/js/ReactiveSunburstTemplate.js'
 		//,'client/js/sunburst.js'
   ], 'client');
 });
