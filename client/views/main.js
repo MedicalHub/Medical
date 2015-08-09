@@ -1,3 +1,4 @@
+AutoForm.setDefaultTemplate('materialize');
 Template.main.helpers({
 	Layouttemplate: function(){
 		template = Session.get("role");

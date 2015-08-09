@@ -20,12 +20,10 @@
  meteor add jplack:bootstrap-timepicker
  meteor add meteor-platform
  meteor add mirrorcell:geolocation-plus
- meteor add mizzao:bootstrap-3
- meteor add mizzao:jquery-ui
  meteor add mrt:moment
  meteor add msavin:mongol
+ meteor add msavin:jetsetter
  meteor add npm-bcrypt
- meteor add pfafman:font-awesome-4
  meteor add reactive-var
  meteor add sacha:spin
  meteor add styling
@@ -33,5 +31,12 @@
  meteor add userman
  meteor add vsivsi:job-collection
  meteor add yogiben:autoform-map
+ 
+ meteor add materialize:materialize
+ meteor add gildaspk:autoform-materialize
+# meteor add mizzao:bootstrap-3
+ meteor add mizzao:jquery-ui
+# meteor add pfafman:font-awesome-4
+#	meteor add ecwyne:polymer
+#	meteor add ecwyne:polymer-elements
  meteor remove autopublish
-	#test merge
