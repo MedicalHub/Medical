@@ -26,7 +26,7 @@
  meteor add npm-bcrypt
  meteor add reactive-var
  meteor add sacha:spin
- meteor add styling
+ #meteor add styling
  meteor add sunburst
  meteor add userman
  meteor add vsivsi:job-collection
@@ -37,6 +37,6 @@
 # meteor add mizzao:bootstrap-3
  meteor add mizzao:jquery-ui
 # meteor add pfafman:font-awesome-4
-#	meteor add ecwyne:polymer
-#	meteor add ecwyne:polymer-elements
+ meteor add ecwyne:polymer
+ meteor add ecwyne:polymer-elements
  meteor remove autopublish

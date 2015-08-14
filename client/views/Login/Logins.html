@@ -4,7 +4,7 @@
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">M+</a>
       <ul class="right hide-on-med-and-down">
-      {{#autoForm id="login_form" schema="LoginSchema.login" class="form-inline"}}
+      {{#autoForm id="login_form" schema="LoginSchema.login" class="form-inline" template="materialize"}}
        <li>{{> afQuickField name='email' }}</li>
        <li>{{> afQuickField name='password'  type="password" }}</li>
 							<li><button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons">send</i>
@@ -55,7 +55,7 @@
 
 <template name="login">
 			<h2><b>Register Here</b></h2>
-			{{#autoForm id="register_form" schema="LoginSchema.register" }} 
+			{{#autoForm id="register_form" schema="LoginSchema.register" template="materialize"}} 
 			<div class="col s6">{{> afQuickField name='firstName' }} </div>
 				<div class="col s6">{{> afQuickField name='lastName'   }} </div>
 				<div class="col s6">{{> afQuickField name='email'  }} </div>
