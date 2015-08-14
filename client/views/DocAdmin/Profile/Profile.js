@@ -3,7 +3,7 @@ Template.Profile.helpers({
 //		this.username;
 //	}
 });
-Template.profile.rendered = function () {
+Template.Profile.rendered = function () {
     
     $("span.pie").peity("pie", {
         fill: ['#1ab394', '#d7d7d7', '#ffffff']

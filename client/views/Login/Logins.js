@@ -1,8 +1,6 @@
 Template.Logins.rendered = function ( ) { 
 	
 	//   BIG SHOT THING
-	
-	
 	Session.set('role', '');
 	Session.set('diag', false);
 	//////////////////////////////
