@@ -111,5 +111,5 @@ DocSchema.Calendar = new SimpleSchema({
 						});
 					}
 				}*/
-	},
-});
+			},
+		});

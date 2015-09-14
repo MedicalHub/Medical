@@ -3,7 +3,7 @@ DocSchema.Workplace = {};
 DocSchema.Workplace.UserCountry = new SimpleSchema({ 	
 	name: 	{	type: String													},
 	code: 	{	type: String,	regEx: /^[A-Z]{2}$/								}
-	});
+});
 
 DocSchema.Workplace.address = new SimpleSchema({ 
 	street :	{	type : String,			optional : true						},

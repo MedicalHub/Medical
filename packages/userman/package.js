@@ -6,13 +6,13 @@ Package.describe({
 
 Package.on_use(function (api, where) {
 	api.export(['Patient', 'Doctor', 'Files']); //Files need to be done
-	api.export(['LoginSchema', 'DocSchema', 'PatSchema'], 'client');
+	api.export(['LoginSchema', 'DocSchema', 'PatSchema','Verification'], 'client');
 	api.use(['accounts-base', 'accounts-password', 'accounts-facebook', 'accounts-google',
   'aldeed:simple-schema', 'aldeed:collection2', 'aldeed:autoform', 'mongo', 'underscore']);
 	api.add_files([
   'client/js/schemas/doctor/schema.js'
+  , 'client/js/accounts.js'
   , 'client/js/loginschema.js'
-  , 'client/js/loginautoform.js'
   , 'client/js/schemas/doctor/appointment.js'
   , 'client/js/schemas/doctor/calendar.js'
   , 'client/js/schemas/doctor/personal.js'
