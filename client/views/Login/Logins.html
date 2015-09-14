@@ -1,54 +1,24 @@
 <template name="Logins">
 	{{#if Template.subscriptionsReady}}
-  <nav class="top-nav">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">M+</a>
-      <ul class="right hide-on-med-and-down">
-      {{#autoForm id="login_form" schema="LoginSchema.login" class="form-inline" template="materialize"}}
+	  <paper-header-panel class="flex">
+    <paper-toolbar>
+            {{#autoForm id="login_form" schema="LoginSchema.login" class="form-inline" template="materialize"}}
        <li>{{> afQuickField name='email' }}</li>
        <li>{{> afQuickField name='password'  type="password" }}</li>
 							<li><button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons">send</i>
   				</button></li>
 								{{/autoForm}}
-      </ul>
-    </div>
-  </nav>
-    <!-- Page Layout here -->
-    <div class="row">
-
-      <div class="col s7">
-        <div class="image-hover text-center middle-box" style="position:absolute;">
-								<h1 class="logo-name" style="color:#1AB394;">M+</h1>
-								<h3>Welcome to M+</h3>
-								<p>Perfectly designed and precisely prepared admin application for physicians.</p>
-								<p>Login in. To see it in action.</p>
-							</div>
-							<div class="video-hover">
-								<br>
-								<video class="vid" width='100%'>
-									<source src="video/video.mp4" type="video/mp4" />
-								</video>
-								<br>
-							</div>
-      </div>
-
-      <div class="col s5">
-        <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a href="#test1">Physician</a></li>
-        <li class="tab col s3"><a class="active" href="#test2">Patient</a></li>
-
-      </ul>
-    </div>
-    
-    <div id="test1" class="col s12">Test 1</div>
-    <div id="test2" class="col s12">Test 2</div>
-{{>login}}
+    </paper-toolbar>
+  </paper-header-panel>
+<paper-card heading="Card Title">
+  <div class="card-content">Some content</div>
+  <div class="card-actions">
+    <paper-button>Some action</paper-button>
   </div>
+</paper-card>
 
-      </div>
-    </div>
+{{>login}}
+
 	{{else}} Loading... {{/if}}
 </template>
 

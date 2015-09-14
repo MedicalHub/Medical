@@ -1,0 +1,32 @@
+<template name="PolyForm">
+
+	<paper-card heading={{this.heading}}>
+	<form is="iron-form" id={{id}} >
+		<div class="card-content">
+
+				<div class="container">
+
+			{{> Template.contentBlock this}}
+
+				</div>
+
+		</div>
+		<div class="card-actions">
+			<paper-button raised >Submit</paper-button>
+		</div>
+	</form>
+</paper-card> 
+</template>
+
+<template name="Polyfield">
+	
+	{{{type}}}
+
+</template>
+
+
+<template name="PolyArray">
+	
+	{{{type}}}
+
+</template>

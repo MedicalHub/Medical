@@ -39,4 +39,5 @@
 # meteor add pfafman:font-awesome-4
  meteor add ecwyne:polymer
  meteor add ecwyne:polymer-elements
+ meteor add conielo:autoform-polymer-paper
  meteor remove autopublish
