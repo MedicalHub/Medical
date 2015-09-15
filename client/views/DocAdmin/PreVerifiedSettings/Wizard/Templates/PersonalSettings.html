@@ -1,4 +1,7 @@
 <template name="PersonalSettings">
-	{{> quickForm id="DocPersonalSettingsForm" collection="Doctor" schema="DocSchema.User" doc=doc type=formtype }}
-	{{updated}}
+	<!--{{> quickForm id="DocPersonalSettingsForm" collection="Doctor" schema="DocSchema.User" doc=doc type=formtype }} -->
+
+	{{#PolyForm  id="DocPersonalSettingsForm" collection="Doctor" schema="DocSchema.User" doc=doc type=formtype hooks=hooks heading='PersonalSettings'}}
+	{{> Polyfield name='' }}
+	{{/PolyForm}}
 </template>

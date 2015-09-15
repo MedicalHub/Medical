@@ -1,0 +1,18 @@
+<template name='PolyWizard'>
+	{{#if Template.subscriptionsReady}}
+	<paper-card heading={{heading}} >
+	<div class="card-content">	
+		<paper-toolbar class="medium-tall">
+		<div>	{{>PolyWizardHead head}}</div>
+	</paper-toolbar>
+
+</div>
+<div class="card-content">{{> Template.dynamic template=template data=data}}</div>
+</paper-card>
+{{else}} Loading... Wizard Templates {{/if}}
+</template>
+
+<template name='PolyWizardHead'>
+ <paper-fab icon="add" class="{{bstate 4}}"></paper-fab>
+	<button class="b4 btn {{bstate 4}}" type="button"><i class="fa fa-check"></i>&nbsp;Weekly Calendar</button>
+</template>
