@@ -29,8 +29,6 @@ CnsrctTree = function (schema,doc) {
 	stack = _.clone(schema.objectKeys().reverse());
 	address_stack= [];
 	address_stack.push(tree);
-	//doc_stack = [];
-	//doc_stack.push(doc);
 
 	_.map(schema.objectKeys().reverse(),function(suffix){ address_stack.push(tree[suffix]='') });
 
