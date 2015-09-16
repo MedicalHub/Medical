@@ -12,7 +12,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
-  api.addFiles('polywizard.js');
+  api.use(['templating','reactive-var'], 'client');
+  api.addFiles(['PolyWizard.html','PolyWizard.js'],'client');
 });
 
 Package.onTest(function(api) {

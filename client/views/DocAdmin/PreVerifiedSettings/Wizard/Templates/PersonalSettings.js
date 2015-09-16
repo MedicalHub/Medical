@@ -9,23 +9,19 @@ Template.PersonalSettings.helpers({
 	doc: function () {
 		return Doctor.findOne(Meteor.userId());
 	},
-	updated: function () {
-		if (!PreVerifiedSettingWizardAutoformvalidRVAr.get()) {
-			PreVerifiedSettingWizardAutoformvalidRVAr.set(true);
-			Template.parentData(3).states[this.index].set = true;
-			console.log(Template.parentData(3).states);
-			PreVerifiedSettingWizardvalidRVAr.set(false);
-			return "updated";
-		} else {
-			return "";
+	hooks :  {
+		DocPersonalSettingsForm: {
+			onError: function (formType, error) {
+				console.log('onerror');
+			},
+			onSuccess: function (formid) {
+				console.log(Template.instance());
+				console.log(Template.parentData(0));
+				console.log(Template.parentData(1));	
+				//Rvar = Template.parentData(1).Rvar.get();
+				//Rvr += 1;
+				//Template.parentData(1).Rvar.set(Rvr);
+			}
 		}
-	}
-});
-AutoForm.hooks({
-	DocPersonalSettingsForm: {
-		onSuccess: function (formType, result) {
-			PreVerifiedSettingWizardAutoformvalidRVAr.set(false);
-			console.info("success");
-		},
 	}
 });

@@ -33,17 +33,17 @@ Template.Logins.onRendered (function () {
 });
 
 Template.Logins.events ({ 
-	'click li a': function (event) {
-		event.preventDefault();
-		//event.stopPropagation();
-		if (event.currentTarget.text == "Physician")
-		{
-			Session.set('role','phy');
-		}
-		else {
-			Session.set('role','pat');
-		}
-	},
+	// 'click li a': function (event) {
+	// 	event.preventDefault();
+	// 	//event.stopPropagation();
+	// 	if (event.currentTarget.text == "Physician")
+	// 	{
+	// 		Session.set('role','phy');
+	// 	}
+	// 	else {
+	// 		Session.set('role','pat');
+	// 	}
+	// },
 	'click button#diagnose': function (event) {
 		event.preventDefault();
 		Session.set('diag',true);

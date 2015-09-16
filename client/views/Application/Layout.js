@@ -31,6 +31,10 @@ Template.Layout.helpers({
 			if(Session.equals('role','phy')) {
 				// Doc Not verified
 
+  // Use this.subscribe inside onCreated callback
+  
+  Template.instance().subscribe('loggeddoctor');
+
 				if (Roles.userIsInRole(Meteor.userId(), ['phy','noinfo'], Roles.GLOBAL_GROUP)) {
 					Session.set('LayoutTemplate','PreVerifiedSetting');
 					return LayoutTemplates[2].value;
