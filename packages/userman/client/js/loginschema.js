@@ -6,7 +6,7 @@ LoginSchema = {};
 	});
 
 	LoginSchema.register= new SimpleSchema({ 	
-		firstName: 	{	type: [String],	regEx: /^[a-zA-Z-]{2,25}$/,	label : 'First Name' 	},
+		firstName: 	{	type: String,	regEx: /^[a-zA-Z-]{2,25}$/,	label : 'First Name' 	},
 		lastName:  	{	type: String,	regEx: /^[a-zA-Z]{2,25}$/, 	label : 'Last Name'		},
 		email 	: 	{	type: String,	regEx: SimpleSchema.RegEx.Email  , label : 'Email'	},
 		password : 	{	type: String,	regEx: /^[A-Z]{2}$/		, label : 'Password'		},
