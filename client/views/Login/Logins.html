@@ -6,10 +6,10 @@
 			<div>			
 <!-- #03a9f4 -->
 
-				{{#PolyForm id="login_form" schema="LoginSchema.login" layout='inline' hooks=hooks}}
-				{{> Polyfield name='email' }}
-				{{> Polyfield name='password'}} 
-				{{/PolyForm}}
+				{{#autoForm id="login_form" schema="LoginSchema.login" layout='inline' hooks=hooks}}
+				{{> afQuickField name='email' }}
+				{{> afQuickField name='password'}} 
+				{{/autoForm}}
 			</div>
 		</div>
 		<button type="button" id="diagnose" class="btn btn-primary">DIAGNOSE</button>
@@ -60,8 +60,10 @@
 
 
 <template name="login">
+{{>quickForm id="register_form" schema="LoginSchema.register" heading='Register Here' hooks=hooks}} 
+<!--
 	{{#PolyForm id="register_form" schema="LoginSchema.register" heading='Register Here' hooks=hooks}} 
-	    <!-- {{>Polyfield name=''}} 			-->
+	     {{>Polyfield name=''}} 			
 
 				{{> Polyfield name='firstName'  }} 
 				{{> Polyfield name='lastName'  }} 
@@ -70,6 +72,7 @@
 				{{> Polyfield name='confirmPassword' }} 
 				{{> Polyfield name="gender" }} 
 				{{> Polyfield name='birthday'  }} 
+			
 
-	{{/PolyForm}}
+	{{/PolyForm}}	-->
 </template>
